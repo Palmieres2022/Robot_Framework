@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230607 00:43:18.321" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Framework" source="C:\Estudos_Robot_Framework\Robot_Framework">
+<suite id="s1-s1" name="Testes" source="C:\Estudos_Robot_Framework\Robot_Framework\testes">
+<suite id="s1-s1-s1" name="Teste Site Amazon" source="C:\Estudos_Robot_Framework\Robot_Framework\testes\teste_site_amazon.robot">
+<test id="s1-s1-s1-t1" name="CT 01 - Usuário acessa o site da Amazon, procura um produto e adiciona ao carrinho" line="9">
+<kw name="Abrir o navegador" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230607 00:43:18.573" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230607 00:43:18.573" endtime="20230607 00:43:20.605"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230607 00:43:20.605" endtime="20230607 00:43:20.740"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:18.572" endtime="20230607 00:43:20.740"/>
+</kw>
+<kw name="Dado que o usuário está na página inicial da Amazon" library="amazon_home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_AMAZON}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230607 00:43:20.744" level="INFO">Opening url 'https://www.amazon.com.br/'</msg>
+<status status="PASS" starttime="20230607 00:43:20.743" endtime="20230607 00:43:24.277"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230607 00:43:24.297" level="INFO">Page title is 'Amazon.com.br | Tudo pra você, de A a Z.'.</msg>
+<status status="PASS" starttime="20230607 00:43:24.277" endtime="20230607 00:43:24.297"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:20.742" endtime="20230607 00:43:24.297"/>
+</kw>
+<kw name="Quando o usuário realiza a pesquisa pelo termo &quot;Kindle&quot;" library="amazon_home" sourcename="Quando o usuário realiza a pesquisa pelo termo &quot;${HOME_PRODUTO}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_CAMPO_PESQUISA_PRODUTOS}</arg>
+<arg>${HOME_PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230607 00:43:24.299" level="INFO">Typing text 'Kindle' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20230607 00:43:24.298" endtime="20230607 00:43:24.517"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 00:43:24.518" level="INFO">Clicking element 'id=nav-search-submit-button'.</msg>
+<status status="PASS" starttime="20230607 00:43:24.517" endtime="20230607 00:43:27.909"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230607 00:43:29.911" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230607 00:43:27.910" endtime="20230607 00:43:29.911"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:24.298" endtime="20230607 00:43:29.911"/>
+</kw>
+<kw name="Então os resultados da pesquisa são exibidos" library="amazon_home">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HOME_RESULTADO_PESQUISA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230607 00:43:29.963" level="INFO">Element '//span[@class='a-size-medium-plus a-color-base a-text-bold'][contains(.,'Resultados')]' is displayed.</msg>
+<status status="PASS" starttime="20230607 00:43:29.914" endtime="20230607 00:43:29.963"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:29.913" endtime="20230607 00:43:29.963"/>
+</kw>
+<kw name="Quando o usuário clica no primeiro resultado da pesquisa" library="amazon_home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PRIMEIRO_PRODUTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 00:43:29.966" level="INFO">Clicking element '(//img[contains(@class,'s-image')])[2]'.</msg>
+<status status="PASS" starttime="20230607 00:43:29.964" endtime="20230607 00:43:34.790"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:29.964" endtime="20230607 00:43:34.790"/>
+</kw>
+<kw name="Então o detalhe do produto é exibido" library="amazon_home">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${HOME_DETALHE_PRODUTO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230607 00:43:34.829" level="INFO">Element '//h2[contains(.,'Detalhes Técnicos')]' is displayed.</msg>
+<status status="PASS" starttime="20230607 00:43:34.792" endtime="20230607 00:43:34.830"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:34.791" endtime="20230607 00:43:34.830"/>
+</kw>
+<kw name="Quando o usuário clica no botão &quot;Adicionar ao carrinho&quot;" library="amazon_home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_ADICIONAR_PRODUTO_CARRINHO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 00:43:34.837" level="INFO">Clicking element 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20230607 00:43:34.837" endtime="20230607 00:43:35.739"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:34.835" endtime="20230607 00:43:35.739"/>
+</kw>
+<kw name="Então o produto é adicionado ao carrinho com sucesso" library="amazon_home">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${CART_MENSAGEM_CONFIRMACAO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230607 00:43:35.790" level="INFO">Element '//span[contains(.,'Adicionado ao carrinho')]' is displayed.</msg>
+<status status="PASS" starttime="20230607 00:43:35.741" endtime="20230607 00:43:35.791"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:35.740" endtime="20230607 00:43:35.791"/>
+</kw>
+<kw name="E o carrinho exibe uma quantidade de itens igual a 1" library="amazon_home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230607 00:43:35.792" level="INFO">Clicking element 'id=nav-cart-count'.</msg>
+<status status="PASS" starttime="20230607 00:43:35.792" endtime="20230607 00:43:37.454"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${CART_CAMPO_SUBTOTAL}</arg>
+<arg>${CART_QUANTIDADE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230607 00:43:37.509" level="INFO">Element 'sc-subtotal-label-buybox' contains text 'Subtotal (1 item):'.</msg>
+<status status="PASS" starttime="20230607 00:43:37.454" endtime="20230607 00:43:37.509"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:35.792" endtime="20230607 00:43:37.509"/>
+</kw>
+<kw name="Fecha o navegador" library="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230607 00:43:37.514" endtime="20230607 00:43:39.741"/>
+</kw>
+<status status="PASS" starttime="20230607 00:43:37.512" endtime="20230607 00:43:39.743"/>
+</kw>
+<doc>Funcionalidade: Adicionar produto ao carrinho na Amazon</doc>
+<tag>Carrinho de compras</tag>
+<status status="PASS" starttime="20230607 00:43:18.569" endtime="20230607 00:43:39.744"/>
+</test>
+<doc>Esta suite testa o site da amazon.com.br</doc>
+<status status="PASS" starttime="20230607 00:43:18.368" endtime="20230607 00:43:39.746"/>
+</suite>
+<status status="PASS" starttime="20230607 00:43:18.360" endtime="20230607 00:43:39.748"/>
+</suite>
+<status status="PASS" starttime="20230607 00:43:18.325" endtime="20230607 00:43:39.750"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Carrinho de compras</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Framework">Robot Framework</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testes">Robot Framework.Testes</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Teste Site Amazon">Robot Framework.Testes.Teste Site Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
