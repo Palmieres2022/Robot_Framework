@@ -19,6 +19,8 @@ CT 01 - Usuário acessa o site da Amazon, procura um produto e adiciona ao carri
     E o carrinho exibe uma quantidade de itens igual a 1
 
 CT 02 - Acesso ao menu Livros
+    [Documentation]    Testar se o Menu Livros está funconando como esperado
+    [Tags]    Menu Livros
     Dado que o usuário está na página inicial da Amazon 
     Quando acessar o menu "Livros" 
     Então o título da página deve ficar "Livros | Amazon.com.br"
