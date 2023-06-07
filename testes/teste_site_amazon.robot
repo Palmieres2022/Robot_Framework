@@ -17,3 +17,9 @@ CT 01 - Usuário acessa o site da Amazon, procura um produto e adiciona ao carri
     Quando o usuário clica no botão "Adicionar ao carrinho"
     Então o produto é adicionado ao carrinho com sucesso
     E o carrinho exibe uma quantidade de itens igual a 1
+
+CT 02 - Acesso ao menu "Eletrônicos"
+    Dado que o usuário está na página inicial da Amazon 
+    Quando acessar o menu "Eletrônicos" 
+    Então o título da página deve ficar  "Eletrônicos e Tecnologia | Amazon.com.br"
+    E o texto "Eletrônicos e Tecnologia" deve ser exibido na página
