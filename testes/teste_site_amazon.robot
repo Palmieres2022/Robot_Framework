@@ -2,6 +2,7 @@
 Documentation    Esta suite testa o site da amazon.com.br       
 
 Resource         ../resources/main.robot
+
 Test Setup       Abrir o navegador
 Test Teardown    Fecha o navegador
 
@@ -25,3 +26,14 @@ CT 02 - Acesso ao menu Livros
     Quando acessar o menu "Livros" 
     Então o título da página deve ficar "Livros | Amazon.com.br"
     E o texto "Loja de Livros" deve ser exibido na página
+
+CT 03 - Criar Conta sem informar os dados solicitados
+    [Documentation]    Testar se o sistema emite os alertas obrigatórios
+...                    ao preencher o formulário de cadastro 
+    [Tags]    Criar Conta
+    Dado que o usuário está na página inicial da Amazon 
+    Quando acessar o menu "Contas e Listas"
+    E clicar em "Criar sua conta Amazon"
+    Então o formulário de cadastro é exibido para preenchimento
+    E clicar em "Continuar"
+    Então o sistema deve emitir as mensagens de preenchimento obrigatório

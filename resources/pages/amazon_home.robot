@@ -11,6 +11,7 @@ ${HOME_PRIMEIRO_PRODUTO}             (//img[contains(@class,'s-image')])[2]
 ${HOME_DETALHE_PRODUTO}              //h2[contains(.,'Detalhes Técnicos')]
 ${HOME_ADICIONAR_PRODUTO_CARRINHO}   id=add-to-cart-button 
 ${HOME_MENU_LIVROS}                  //a[contains(.,'Livros')]
+${HOME_MENU_CONTAS}                  //span[@class='nav-line-2 ']
 ${CART_MENSAGEM_CONFIRMACAO}         //span[contains(.,'Adicionado ao carrinho')]
 ${CART_MENU}                         id=nav-cart-count
 ${CART_CAMPO_SUBTOTAL}               sc-subtotal-label-buybox
@@ -49,4 +50,6 @@ Quando acessar o menu "Livros"
     Wait Until Element Is Visible    ${HOME_MENU_LIVROS}
     Click Element                    ${HOME_MENU_LIVROS}
 
+Quando acessar o menu "Contas e Listas"
+    Click Element                    ${HOME_MENU_CONTAS} 
     
