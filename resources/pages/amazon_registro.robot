@@ -26,7 +26,7 @@ Então o formulário de cadastro é exibido para preenchimento
     Wait Until Element Is Visible    ${REGISTRO_CAMPO_CHECK_SENHA} 
     Page Should Contain Element      ${REGISTRO_CAMPO_CHECK_SENHA}
 
-E clicar em "Continuar"
+E clicar em "Continuar" sem preencher o formulário
     Click Element                  ${REGISTRO_BOTAO_CONTINUAR} 
 
 Então o sistema deve emitir as mensagens de preenchimento obrigatório

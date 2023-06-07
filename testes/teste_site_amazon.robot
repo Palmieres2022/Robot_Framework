@@ -35,5 +35,5 @@ CT 03 - Criar Conta sem informar os dados solicitados
     Quando acessar o menu "Contas e Listas"
     E clicar em "Criar sua conta Amazon"
     Então o formulário de cadastro é exibido para preenchimento
-    E clicar em "Continuar"
+    E clicar em "Continuar" sem preencher o formulário
     Então o sistema deve emitir as mensagens de preenchimento obrigatório
