@@ -29,7 +29,8 @@ CT 02 - Acesso ao menu Livros
 
 CT 03 - Criar Conta sem informar os dados solicitados
     [Documentation]    Testar se o sistema emite os alertas obrigatórios
-...                    ao preencher o formulário de cadastro 
+...                    ao tentar preencher o formulário de cadastro sem
+...                    preenhcer os campos obrigatórios.
     [Tags]    Criar Conta
     Dado que o usuário está na página inicial da Amazon 
     Quando acessar o menu "Contas e Listas"
